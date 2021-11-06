@@ -1,0 +1,27 @@
+name: 'Move Azure Workitem to Column Action'
+description: 'Moves an Azure DevOps workitem to a column.'
+
+branding:
+  icon: 'zap'
+  color: 'white'
+
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+
+inputs:
+  organization:
+    description: 'Your Azure organization.'
+    required: true
+  project:
+    description: 'Your Azure project.'
+    required: true
+  pat:
+    description: 'An Azure DevOps personal access token.'
+    required: true
+  field:
+    description: 'The field we need to update. e.g.: WEF_12341234123412341234123412341234_Kanban.Column'
+    required: true
+  column:
+    description: 'Column to move the workitem to. e.g.: Doing, In Progress, QA'
+    required: true
